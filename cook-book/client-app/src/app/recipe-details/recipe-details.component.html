@@ -1,3 +1,16 @@
-<div>
-  test
+<div *ngIf="this.recipes">
+  <h2>tytuł: {{this.recipes.title}}</h2>
+  <p>{{this.recipes.description}}</p>
+  <ul>
+    <li *ngFor="let ingredient of this.recipes.ingredients">{{ingredient}}</li>
+  </ul>
+
+  <p>{{this.recipes.recipe}}</p>
+  <span>Kategoria: {{this.recipes.category}}</span>
+
+
 </div>
+
+<span *ngIf="!this.recipes">
+  Nie znaleziono przepisu.
+</span>
