@@ -1,6 +1,30 @@
-<p>
-  new-recipe works!
-</p>
-<ckeditor tagName="textarea" [editor]="Editor" [data]="editorData"
-  [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic', '|', 'link', '|', 'bulletedList', 'numberedList' ] }">
-</ckeditor>
+<h2>Dodaj nowy przepis: </h2>
+<form [formGroup]="recipeForm">
+
+  <label>
+    Nazwa potrawy:
+    <input type="text" formControlName="title">
+  </label>
+
+  <label for="desc"> Skrócony opis dania: </label>
+  <textarea name="desc" formControlName="description">
+      Nazwa potrawy:
+    </textarea>
+
+
+  <div>
+    <label for="recipe">Podaj przepis:
+      <ckeditor tagName="textarea" [editor]="Editor" [data]="editorData">
+      </ckeditor>
+    </label>
+  </div>
+
+
+  <select>
+    <option *ngFor="let item of recipes">
+      {{item}}
+    </option>
+  </select>
+
+
+</form>

@@ -7,7 +7,8 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     CKEditorModule,
-    FormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

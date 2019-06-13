@@ -21,7 +21,6 @@ export class RecipeDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.getRecipe();
-
   }
 
   getRecipe(): void {
