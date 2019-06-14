@@ -23,7 +23,9 @@ export class RecipesService {
 
     const output: string[] = [];
     for (const recipe of RECIPES) {
-      output.push(recipe.category);
+      if (!output.includes(recipe.category)) {
+        output.push(recipe.category);
+      }
     }
 
     return of(output);

@@ -2,9 +2,9 @@
   <h2>Lista przepisów:</h2>
   <ul class="recipes">
     <li *ngFor="let recipe of recipes">
-      <div class="recipes__item">
+      <div class="recipes__item" routerLink="/details/{{recipe.id}}">
 
-        <a routerLink="/details/{{recipe.id}}">{{recipe.title}}</a>
+        <a>{{recipe.title}}</a>
       </div>
     </li>
   </ul>
