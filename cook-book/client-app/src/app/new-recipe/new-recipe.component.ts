@@ -14,17 +14,26 @@ export class NewRecipeComponent implements OnInit {
   public Editor = ClassicEditor;
   public editorData = '<p>Hello, world!</p>';
 
-
   recipeForm = new FormGroup({
-    title: new FormControl('', Validators.required),
-    description: new FormControl('', Validators.required),
-    recipe: new FormControl('', Validators.required),
-    category: new FormControl('', Validators.required),
+    title: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5)
+    ]),
+
+    description: new FormControl('',
+      [Validators.required,
+      Validators.minLength(50),
+      Validators.maxLength(250)]),
+
+    recipe: new FormControl('',
+      [Validators.required,
+      Validators.minLength(150)]
+    ),
+    category: new FormControl('null', Validators.required),
+
   });
 
-
   subscriptions$ = new Subscription();
-
 
   recipes: string[];
 
@@ -33,6 +42,14 @@ export class NewRecipeComponent implements OnInit {
 
   ngOnInit() {
     this.getAllCategories()
+  }
+
+  OnDestroy(): void {
+    this.subscriptions$.unsubscribe();
+  }
+
+  debug(xxx: any) {
+    console.dir(this.recipeForm)
   }
 
   getAllCategories() {
@@ -49,12 +66,11 @@ export class NewRecipeComponent implements OnInit {
 
   }
 
-  ngOnDestroy(): void {
-    this.subscriptions$.unsubscribe();
 
-  }
   onSubmit() {
     console.warn(this.recipeForm.value);
+    console.dir(this.recipeForm)
+
   }
 
 }

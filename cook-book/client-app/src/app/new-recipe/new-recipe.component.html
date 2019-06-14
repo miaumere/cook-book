@@ -1,12 +1,16 @@
 <div class="recipe-component">
-
   <h2 class="title">Dodaj nowy przepis: </h2>
-  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" class="form">
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" class="form" spellcheck="false">
 
     <label class="form__title">
       <span class="form__span">Nazwa potrawy:</span>
-      <input type="text" formControlName="title" required>
+      <input type="text" formControlName="title" #xxx required>
     </label>
+
+    <div class="form__error"
+      *ngIf="recipeForm?.controls.title?.status === 'INVALID' && recipeForm?.controls.title?.touched">
+      Musisz wpisać nazwę! Pamiętaj, że nazwa musi zawierać 3-20 znaków.
+    </div>
 
     <label class="form__desc" for="desc">
       <span class="form__span">Skrócony opis dania:</span>
@@ -14,6 +18,10 @@
       </textarea>
     </label>
 
+    <div class="form__error"
+      *ngIf="recipeForm?.controls.description?.status === 'INVALID' && recipeForm?.controls.description?.touched">
+      Musisz wpisać opis! Pamiętaj, że opis powinien zawierać 50-250 znaków.
+    </div>
 
     <div class="form__recipe">
       <label for="recipe">
@@ -24,14 +32,24 @@
       </label>
     </div>
 
+    <div class="form__error"
+      *ngIf="recipeForm?.controls.recipe?.status === 'INVALID' && recipeForm?.controls.recipe?.touched">
+      Musisz wpisać przepis! Przepis musi zawierać co najmniej 150 znaków.
+    </div>
 
     <span class="form__span">Wybierz kategorię jedzenia:</span>
     <select formControlName="category" class="form__select" required>
-      <option value="null" disabled>-----</option>
+      <option value="null" disabled>----</option>
       <option *ngFor="let item of recipes">
         {{item}}
       </option>
     </select>
+
+    <div class="form__error"
+      *ngIf="recipeForm?.controls.category?.status === 'INVALID' && recipeForm?.controls.category?.touched">
+      Musisz wybrać kategorię!
+    </div>
+
 
     <button class="form__button">
       Dodaj nowy przepis!
