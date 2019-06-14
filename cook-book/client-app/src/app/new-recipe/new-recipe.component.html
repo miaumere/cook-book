@@ -1,34 +1,40 @@
-<h2>Dodaj nowy przepis: </h2>
-<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+<div class="recipe-component">
 
-  <label>
-    Nazwa potrawy:
-    <input type="text" formControlName="title" required>
-  </label>
+  <h2 class="title">Dodaj nowy przepis: </h2>
+  <form [formGroup]="recipeForm" (ngSubmit)="onSubmit()" class="form">
 
-  <div>
-    <label for="desc"> Skrócony opis dania: </label>
-    <textarea name="desc" formControlName="description" required>
-    </textarea>
-  </div>
-
-
-  <div>
-    <label for="recipe">Podaj przepis:
-      <ckeditor tagName="textarea" [editor]="Editor" [data]="editorData" required formControlName="recipe"
-        [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic', '|', 'bulletedList', 'numberedList'] }">
-      </ckeditor>
+    <label class="form__title">
+      <span class="form__span">Nazwa potrawy:</span>
+      <input type="text" formControlName="title" required>
     </label>
-  </div>
+
+    <label class="form__desc" for="desc">
+      <span class="form__span">Skrócony opis dania:</span>
+      <textarea name="desc" formControlName="description" required rows="4" cols="50">
+      </textarea>
+    </label>
 
 
-  <select formControlName="category">
-    <option *ngFor="let item of recipes">
-      {{item}}
-    </option>
-  </select>
+    <div class="form__recipe">
+      <label for="recipe">
+        <span class="form__span">Podaj przepis:</span>
+        <ckeditor tagName="textarea" [editor]="Editor" formControlName="recipe" class="recipe"
+          [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic', '|', 'bulletedList', 'numberedList']}">
+        </ckeditor>
+      </label>
+    </div>
 
-  <button>
-    Dodaj nowy przepis!
-  </button>
-</form>
+
+    <span class="form__span">Wybierz kategorię jedzenia:</span>
+    <select formControlName="category" class="form__select" required>
+      <option value="null" disabled>-----</option>
+      <option *ngFor="let item of recipes">
+        {{item}}
+      </option>
+    </select>
+
+    <button class="form__button">
+      Dodaj nowy przepis!
+    </button>
+  </form>
+</div>

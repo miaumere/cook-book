@@ -14,9 +14,14 @@ h4,
 h5,
 h6 {
   @include font-alternative;
+  text-align: center;
 }
 
 ::selection {
   color: black;
   background: pink;
+}
+
+.title {
+  font-size: 2rem;
 }

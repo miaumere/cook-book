@@ -1,7 +1,7 @@
 <div class="recipes-component">
-  <h2>Lista przepisów:</h2>
+  <h2 class="title">Lista przepisów:</h2>
   <ul class="recipes">
-    <li *ngFor="let recipe of recipes">
+    <li *ngFor="let recipe of recipes" class="recipes__list-item">
       <div class="recipes__item" routerLink="/details/{{recipe.id}}">
 
         <a>{{recipe.title}}</a>
