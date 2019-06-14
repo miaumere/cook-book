@@ -48,10 +48,6 @@ export class NewRecipeComponent implements OnInit {
     this.subscriptions$.unsubscribe();
   }
 
-  debug(xxx: any) {
-    console.dir(this.recipeForm)
-  }
-
   getAllCategories() {
 
     const observableResult$ = this.recipesService.getAllCategories();

@@ -7,3 +7,13 @@
 @mixin font-alternative {
   font-family: "Charmonman";
 }
+
+@mixin gradient-border {
+  border-top: $border-value solid $gradient1;
+  border-bottom: $border-value solid $gradient2;
+
+  background-image: linear-gradient($gradient1, $gradient2), linear-gradient($gradient1, $gradient2);
+  background-size: $border-value 100%;
+  background-position: 0 0, 100% 0;
+  background-repeat: no-repeat;
+}
