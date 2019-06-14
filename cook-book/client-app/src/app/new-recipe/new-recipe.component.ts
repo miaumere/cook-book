@@ -54,5 +54,8 @@ export class NewRecipeComponent implements OnInit {
     this.subscriptions$.unsubscribe();
 
   }
+  onSubmit() {
+    console.warn(this.recipeForm.value);
+  }
 
 }
