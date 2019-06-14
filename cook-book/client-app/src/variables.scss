@@ -1,0 +1,9 @@
+@import "./fonts.scss";
+
+@mixin font-regular {
+  font-family: "Roboto";
+}
+
+@mixin font-alternative {
+  font-family: "Charmonman";
+}

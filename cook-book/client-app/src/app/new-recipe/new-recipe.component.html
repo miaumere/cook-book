@@ -6,15 +6,18 @@
     <input type="text" formControlName="title">
   </label>
 
-  <label for="desc"> Skrócony opis dania: </label>
-  <textarea name="desc" formControlName="description">
-      Nazwa potrawy:
-    </textarea>
+  <div>
+    <label for="desc"> Skrócony opis dania: </label>
+    <textarea name="desc" formControlName="description">
+        Nazwa potrawy:
+      </textarea>
+  </div>
 
 
   <div>
     <label for="recipe">Podaj przepis:
-      <ckeditor tagName="textarea" [editor]="Editor" [data]="editorData">
+      <ckeditor tagName="textarea" [editor]="Editor" [data]="editorData"
+        [config]="{ toolbar: [ 'heading', '|', 'bold', 'italic', '|', 'bulletedList', 'numberedList'] }">
       </ckeditor>
     </label>
   </div>

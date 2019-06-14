@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <ul class="navbar__list">
+    <li class="navbar__item">
+      <a routerLink="./" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+        Strona główna</a>
+    </li>
+    <li class="navbar__item">
+      <a routerLink="/add" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Dodaj nowy
+        przepis</a>
+    </li>
+    <li class="navbar__item navbar__item--left">
+      <input type="text" placeholder="Tu będzie wyszukiwanie">
+    </li>
+  </ul>
+</nav>

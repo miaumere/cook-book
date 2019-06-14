@@ -9,6 +9,7 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
     RecipesComponent,
     NewRecipeComponent,
     RecipeDetailsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

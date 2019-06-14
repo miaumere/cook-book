@@ -1,0 +1,31 @@
+$gradient1: #30cfd0;
+$gradient2: #26336d;
+$border-value: 3px;
+
+.recipe-details {
+  display: flex;
+  flex-direction: column;
+  .text-container {
+    width: 400px;
+    padding: 20px;
+
+    border-top: $border-value solid $gradient1;
+    border-bottom: $border-value solid $gradient2;
+    background-image: linear-gradient($gradient1, $gradient2), linear-gradient($gradient1, $gradient2);
+    background-size: $border-value 100%;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+
+    font-size: 0.7rem;
+  }
+
+  .description {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  }
+  .category {
+    font-size: 0.8rem;
+    margin: 0.2rem 0;
+
+    opacity: 0.7;
+  }
+}
