@@ -1,0 +1,31 @@
+.recipes-component {
+  & .recipes {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+
+    &__item {
+      display: inline-flex;
+      align-content: center;
+      justify-content: center;
+
+      margin: 0.2rem;
+
+      height: 100px;
+      width: 100px;
+
+      background-color: pink;
+
+      transition: 0.3s;
+
+      & a {
+        margin: auto;
+      }
+
+      &:hover {
+        background-color: wheat;
+      }
+    }
+  }
+}

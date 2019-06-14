@@ -6,11 +6,12 @@ $border-value: 3px;
   display: flex;
   flex-direction: column;
   .text-container {
-    width: 400px;
+    max-width: 50%;
     padding: 20px;
 
     border-top: $border-value solid $gradient1;
     border-bottom: $border-value solid $gradient2;
+
     background-image: linear-gradient($gradient1, $gradient2), linear-gradient($gradient1, $gradient2);
     background-size: $border-value 100%;
     background-position: 0 0, 100% 0;
@@ -21,6 +22,7 @@ $border-value: 3px;
 
   .description {
     border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    margin: 1rem 0;
   }
   .category {
     font-size: 0.8rem;
