@@ -1,31 +1,44 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './classes/recipe';
 import { Observable, of } from 'rxjs';
-import { RECIPES } from './mock-recipes';
 import { HttpClient } from '@angular/common/http';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipesService {
 
-  constructor(public httpClient: HttpClient) { }
+  private recipeUrl = 'api/recipes';
 
-  getRecipe(id: number): Observable<Recipe> {
+  constructor(
+    private http: HttpClient,
+  ) { }
 
-    return of(RECIPES.find(recipe => recipe.id === id));
+  getAllRecipes(): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(this.recipeUrl);
+  }
+
+
+  getRecipe(id: number): Observable<Recipe[]> {
+    const url = `${this.recipeUrl}/${id}`;
+    return this.http.get<Recipe[]>(url);
   }
 
   getAllCategories(): Observable<string[]> {
 
     const output: string[] = [];
-    for (const recipe of RECIPES) {
-      if (!output.includes(recipe.category)) {
-        output.push(recipe.category);
-      }
-    }
+    const recipesObservable = this.http.get<Recipe[]>(this.recipeUrl);
 
+    recipesObservable.subscribe(data => {
+
+      for (const datum of data) {
+        if (!output.includes(datum.category)) {
+          console.log(datum.category)
+          output.push(datum.category);
+        }
+      }
+
+    });
     return of(output);
 
   }

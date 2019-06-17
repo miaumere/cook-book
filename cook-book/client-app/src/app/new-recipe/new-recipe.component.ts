@@ -62,11 +62,4 @@ export class NewRecipeComponent implements OnInit {
 
   }
 
-
-  onSubmit() {
-    console.warn(this.recipeForm.value);
-    console.dir(this.recipeForm)
-
-  }
-
 }
