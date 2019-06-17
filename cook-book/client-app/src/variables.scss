@@ -8,6 +8,10 @@
   font-family: "Charmonman";
 }
 
+$gradient1: rgb(255, 159, 159);
+$gradient2: rgb(255, 212, 132);
+$border-value: 3px;
+
 @mixin gradient-border {
   border-top: $border-value solid $gradient1;
   border-bottom: $border-value solid $gradient2;
