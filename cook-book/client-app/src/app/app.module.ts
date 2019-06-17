@@ -10,6 +10,7 @@ import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
+import { RecipeSearchComponent } from './navbar/recipe-search/recipe-search.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     NewRecipeComponent,
     RecipeDetailsComponent,
     NavbarComponent,
+    RecipeSearchComponent,
   ],
   imports: [
     BrowserModule,
