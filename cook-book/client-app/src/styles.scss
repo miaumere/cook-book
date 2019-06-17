@@ -26,3 +26,18 @@ h6 {
   font-size: 3rem;
   font-weight: lighter;
 }
+
+body {
+  background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+}
+
+.container {
+  max-width: 70%;
+
+  border-radius: 1rem;
+  padding: 1rem;
+  margin: auto;
+  margin-top: 6rem;
+
+  background: white;
+}

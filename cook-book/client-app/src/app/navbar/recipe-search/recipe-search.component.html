@@ -1,3 +1,11 @@
-<div class="recipe-search-component">
-  <input type="text" placeholder="🔎 Znajdź przepis">
+<div id="search-component" class="recipe-search-component">
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" placeholder="🔎 Znajdź przepis" />
+
+  <ul class="search-result">
+    <li *ngFor="let recipe of recipes$ | async">
+      <a routerLink="/detail/{{recipe.title}}">
+        {{recipe.title}}
+      </a>
+    </li>
+  </ul>
 </div>

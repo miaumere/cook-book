@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './classes/recipe';
 import { Observable, of } from 'rxjs';
+import { tap, catchError } from 'rxjs/operators';
+
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -30,16 +32,20 @@ export class RecipesService {
     const recipesObservable = this.http.get<Recipe[]>(this.recipeUrl);
 
     recipesObservable.subscribe(data => {
-
       for (const datum of data) {
         if (!output.includes(datum.category)) {
-          console.log(datum.category)
           output.push(datum.category);
         }
       }
-
     });
     return of(output);
+  }
 
+  searchHeroes(term: string): Observable<Recipe[]> {
+    if (!term.trim()) {
+      return of([]);
+    }
+
+    return this.http.get<Recipe[]>(`${this.recipeUrl}/?details=${term}`)
   }
 }
