@@ -3,7 +3,7 @@
 
   <ul class="search-result">
     <li *ngFor="let recipe of recipes$ | async">
-      <a routerLink="/detail/{{recipe.title}}">
+      <a routerLink="/details/{{recipe.id}}">
         {{recipe.title}}
       </a>
     </li>
