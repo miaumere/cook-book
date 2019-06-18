@@ -8,7 +8,8 @@ import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 const routes: Routes = [
   { path: '', component: RecipesComponent },
   { path: 'details/:id', component: RecipeDetailsComponent },
-  { path: 'add', component: NewRecipeComponent }
+  { path: 'add', component: NewRecipeComponent },
+
 ];
 
 @NgModule({

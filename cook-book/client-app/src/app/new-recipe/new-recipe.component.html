@@ -23,6 +23,21 @@
       Musisz wpisać opis! Pamiętaj, że opis powinien zawierać 50-250 znaków.
     </div>
 
+    <span class="form__span">Wybierz kategorię:</span>
+    <select formControlName="category" class="form__select" required>
+      <option value="null" disabled>----</option>
+      <option *ngFor="let item of recipes">
+        {{item}}
+      </option>
+    </select>
+
+
+    <div class="form__error"
+      *ngIf="recipeForm?.controls.category?.status === 'INVALID' && recipeForm?.controls.category?.touched">
+      Musisz wybrać kategorię!
+    </div>
+
+
     <div class="form__recipe">
       <label for="recipe">
         <span class="form__span">Podaj przepis:</span>
@@ -36,20 +51,6 @@
       *ngIf="recipeForm?.controls.recipe?.status === 'INVALID' && recipeForm?.controls.recipe?.touched">
       Musisz wpisać przepis! Przepis musi zawierać co najmniej 150 znaków.
     </div>
-
-    <span class="form__span">Wybierz kategorię jedzenia:</span>
-    <select formControlName="category" class="form__select" required>
-      <option value="null" disabled>----</option>
-      <option *ngFor="let item of recipes">
-        {{item}}
-      </option>
-    </select>
-
-    <div class="form__error"
-      *ngIf="recipeForm?.controls.category?.status === 'INVALID' && recipeForm?.controls.category?.touched">
-      Musisz wybrać kategorię!
-    </div>
-
 
     <button class="form__button">
       Dodaj nowy przepis!

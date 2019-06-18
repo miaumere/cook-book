@@ -3,8 +3,6 @@ import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../classes/recipe';
 import { ActivatedRoute } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-recipe-details',
   templateUrl: './recipe-details.component.html',
@@ -12,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class RecipeDetailsComponent implements OnInit {
 
-  recipes: Recipe;
+  recipes: Recipe[];
 
   constructor(
     private route: ActivatedRoute,
