@@ -27,6 +27,10 @@ h6 {
   font-weight: lighter;
 }
 
+*:focus {
+  outline: $input-outline;
+}
+
 body {
   background-image: linear-gradient(to top, rgb(36, 36, 36) 0%, rgb(255, 255, 255) 100%);
 }

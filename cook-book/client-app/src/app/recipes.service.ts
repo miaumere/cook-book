@@ -23,7 +23,7 @@ export class RecipesService {
 
   getRecipe(id: number): Observable<Recipe[]> {
     const url = `${this.recipeUrl}/${id}`;
-    return this.http.get<Recipe[]>(url);
+    return this.http.get<Recipe[]>(url).pipe(delay(10000))
   }
 
   getAllCategories(): Observable<string[]> {

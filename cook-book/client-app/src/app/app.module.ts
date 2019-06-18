@@ -12,7 +12,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
-
+import { LoaderComponent } from './shared/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +21,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     NewRecipeComponent,
     RecipeDetailsComponent,
     NavbarComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,

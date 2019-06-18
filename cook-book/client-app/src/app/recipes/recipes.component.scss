@@ -17,8 +17,7 @@
       height: 100px;
       width: 100px;
 
-      background-color: pink;
-
+      background: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%);
       transition: 0.3s;
       cursor: pointer;
 
@@ -27,7 +26,7 @@
       }
 
       &:hover {
-        background-color: wheat;
+        filter: contrast(200%);
       }
     }
 
