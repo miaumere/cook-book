@@ -25,7 +25,7 @@
 
     <span class="form__span">Wybierz kategorię:</span>
     <select formControlName="category" class="form__select" required>
-      <option value="null" disabled>----</option>
+      <option value="null" disabled>{{recipes ? "-----" : "ladowanie..."}}</option>
       <option *ngFor="let item of recipes">
         {{item}}
       </option>

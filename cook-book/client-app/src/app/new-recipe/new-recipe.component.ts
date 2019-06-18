@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RecipesService } from './../recipes.service';
-import { Subscription } from 'rxjs';
+import { Subscription, Observable } from 'rxjs';
+import { Recipe } from '../classes/recipe';
+import { NullTemplateVisitor } from '@angular/compiler';
 
 
 @Component({
@@ -37,33 +39,29 @@ export class NewRecipeComponent implements OnInit {
 
   recipes: string[];
 
-  constructor(private recipesService: RecipesService
-  ) { }
+  constructor(private recipesService: RecipesService) { }
 
   ngOnInit() {
-    this.getAllCategories()
+
+    this.subscriptions$.add(
+      this.recipesService.getAllCategories().subscribe(
+        data => {
+          console.log(data)
+          this.recipes = data;
+        }
+      ))
+
   }
+
+
 
   OnDestroy(): void {
     this.subscriptions$.unsubscribe();
   }
 
-  getAllCategories() {
 
-    const observableResult$ = this.recipesService.getAllCategories();
-
-    this.subscriptions$.add(
-      observableResult$.subscribe(
-        result => {
-          this.recipes = result;
-        }
-      )
-    )
-
-  }
   onSubmit() {
     console.warn(this.recipeForm.value);
-    console.dir(this.recipeForm)
   }
 
 }

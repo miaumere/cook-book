@@ -13,10 +13,11 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 2, title: 'Pyzy', description: 'pyzy są kkk', recipe: 'oto sposób robienia pyz', category: '🍽️ obiady', },
       { id: 3, title: '🥗 Sałatka', description: 'salatke zrobic czaaas', recipe: 'oto sposób robienia salatki', category: '🥗 sałatki', },
       { id: 4, title: '🍣 Sushi', description: 'sushi jest kkk', recipe: 'oto sposób robienia sushi', category: '🍽️ obiady', },
-      { id: 5, title: 'Ciastka', description: 'ciastka są kkk', recipe: 'oto sposób robienia ciastek', category: '🍰 wypieki', }
+      { id: 5, title: 'JAKIES SWINSTWO i', description: 'FUJ FUJ FUJ', recipe: 'oto sposób robienia SWINSTWA', category: '🍽️ obiady', },
+      { id: 6, title: 'Ciastka', description: 'ciastka są kkk', recipe: 'oto sposób robienia ciastek', category: '🍰 wypieki', }
     ];
 
-    const test = ["t1", "t2"]
+    const test = ['t1', 't2'];
 
     return { recipes, test };
   }

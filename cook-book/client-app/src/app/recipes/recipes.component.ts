@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../classes/recipe';
 import { RecipesService } from '../recipes.service';
@@ -13,11 +14,14 @@ export class RecipesComponent implements OnInit {
 
   constructor(private recipesService: RecipesService) { }
 
+  subscriptions$ = new Subscription();
+
+
   ngOnInit() {
     this.getAllRecipes();
   }
 
-  getAllRecipes(): void {
+  getAllRecipes() {
     this.recipesService.getAllRecipes()
       .subscribe(recipes => this.recipes = recipes);
   }

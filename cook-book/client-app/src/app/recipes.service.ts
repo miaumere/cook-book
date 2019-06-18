@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './classes/recipe';
 import { Observable, of } from 'rxjs';
-import { tap, catchError } from 'rxjs/operators';
+import { tap, catchError, delay, map } from 'rxjs/operators';
 
 import { HttpClient } from '@angular/common/http';
 
@@ -28,17 +28,20 @@ export class RecipesService {
 
   getAllCategories(): Observable<string[]> {
 
-    const output: string[] = [];
-    const recipesObservable = this.http.get<Recipe[]>(this.recipeUrl);
+    return this.http.get<Recipe[]>(this.recipeUrl).pipe(
+      delay(3000),
+      map(recipes => {
+        const categoriesArray: string[] = [];
 
-    recipesObservable.subscribe(data => {
-      for (const datum of data) {
-        if (!output.includes(datum.category)) {
-          output.push(datum.category);
+        for (const recipe of recipes) {
+          if (!categoriesArray.includes(recipe.category)) {
+              categoriesArray.push(recipe.category)
+          }
         }
-      }
-    });
-    return of(output);
+
+        return categoriesArray
+      })
+    );
   }
 
   searchHeroes(term: string): Observable<Recipe[]> {
