@@ -12,7 +12,6 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { RecipeSearchComponent } from './navbar/recipe-search/recipe-search.component';
 
 
 @NgModule({
@@ -22,7 +21,6 @@ import { RecipeSearchComponent } from './navbar/recipe-search/recipe-search.comp
     NewRecipeComponent,
     RecipeDetailsComponent,
     NavbarComponent,
-    RecipeSearchComponent,
   ],
   imports: [
     BrowserModule,

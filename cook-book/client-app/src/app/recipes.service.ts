@@ -35,20 +35,13 @@ export class RecipesService {
 
         for (const recipe of recipes) {
           if (!categoriesArray.includes(recipe.category)) {
-              categoriesArray.push(recipe.category)
+            categoriesArray.push(recipe.category)
           }
         }
 
-        return categoriesArray
+        return categoriesArray;
       })
     );
   }
 
-  searchHeroes(term: string): Observable<Recipe[]> {
-    if (!term.trim()) {
-      return of([]);
-    }
-
-    return this.http.get<Recipe[]>(`${this.recipeUrl}/?details=${term}`)
-  }
 }
