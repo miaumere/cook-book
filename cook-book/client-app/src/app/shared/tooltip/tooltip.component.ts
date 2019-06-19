@@ -2,21 +2,22 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tooltip',
-  template: `  <div appTooltip>
-  TESTSETESTSTSTSTET
+  template: `
+  <div appTooltip>
+  {{tooltip}}
   <ng-template #tooltipTemplate>
     <div class="tooltip">
-      Wiadomość w tooltipie
+      <div class="tooltip__arrow"></div>
+      {{message}}
     </div>
   </ng-template>
-</div>`,
+  </div>
+`,
   styleUrls: ['./tooltip.component.scss']
 })
-export class TooltipComponent implements OnInit {
+export class TooltipComponent {
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  tooltip = 'click!!';
+  message = 'wiadomość w tooltipie';
 
 }
