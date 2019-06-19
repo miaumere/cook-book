@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { InMemoryDataService } from './in-memory-data.service';
 
+import { TooltipDirective } from './shared/tooltip/tooltip.directive';
+
 import { AppComponent } from './app.component';
 import { RecipesComponent } from './recipes/recipes.component';
 import { NewRecipeComponent } from './new-recipe/new-recipe.component';
@@ -14,8 +16,7 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { RouterModule } from '@angular/router';
-import { TooltipDirective } from './tooltip.directive';
-
+import { TooltipComponent } from './shared/tooltip/tooltip.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { TooltipDirective } from './tooltip.directive';
     NavbarComponent,
     LoaderComponent,
     TooltipDirective,
+    TooltipComponent,
   ],
   imports: [
     RouterModule,

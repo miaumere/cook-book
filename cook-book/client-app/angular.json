@@ -79,7 +79,8 @@
             },
             "hmr": {
               "hmr": true,
-              "browserTarget": "cook-book:build:hmr"
+              "browserTarget": "cook-book:build:hmr",
+              "hmrWarning": false
             }
           }
         },
