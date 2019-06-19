@@ -27,7 +27,9 @@ h6 {
   font-weight: lighter;
 }
 
-*:focus {
+input:focus,
+textarea:focus,
+button:focus {
   outline: $input-outline;
 }
 
