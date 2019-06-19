@@ -7,7 +7,17 @@
     <li *ngFor="let recipe of recipes" class="recipes__list-item">
       <div class="recipes__item" routerLink="/details/{{recipe.id}}">
 
-        <a>{{recipe.title}}</a>
+        <a appTooltip>{{recipe.title}}
+
+
+          <ng-template #tooltipTemplate>
+            <div class="tooltip">
+              <div class="tooltip__arrow"></div>
+              XXX: {{recipe.title}}
+            </div>
+          </ng-template>
+
+        </a>
       </div>
     </li>
   </ul>
