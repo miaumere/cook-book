@@ -1,5 +1,5 @@
 <div class="recipes-component container">
-  <h2 class="title">Lista ffwe:</h2>
+  <h2 class="title" appTooltip>Lista przepisów:</h2>
   <ul class="recipes">
     <li *ngFor="let recipe of recipes" class="recipes__list-item">
       <div class="recipes__item" routerLink="/details/{{recipe.id}}">

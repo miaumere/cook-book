@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -13,6 +13,9 @@ import { NewRecipeComponent } from './new-recipe/new-recipe.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoaderComponent } from './shared/loader/loader.component';
+import { RouterModule } from '@angular/router';
+import { TooltipDirective } from './tooltip.directive';
+
 
 @NgModule({
   declarations: [
@@ -22,11 +25,14 @@ import { LoaderComponent } from './shared/loader/loader.component';
     RecipeDetailsComponent,
     NavbarComponent,
     LoaderComponent,
+    TooltipDirective,
   ],
   imports: [
+    RouterModule,
     BrowserModule,
     AppRoutingModule,
     CKEditorModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(
@@ -34,7 +40,7 @@ import { LoaderComponent } from './shared/loader/loader.component';
     )
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 
 export class AppModule { }

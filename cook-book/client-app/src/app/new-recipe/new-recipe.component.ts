@@ -3,8 +3,6 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RecipesService } from './../recipes.service';
 import { Subscription, Observable } from 'rxjs';
-import { Recipe } from '../classes/recipe';
-import { NullTemplateVisitor } from '@angular/compiler';
 
 
 @Component({
