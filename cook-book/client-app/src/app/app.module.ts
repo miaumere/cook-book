@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
@@ -32,6 +33,7 @@ import { TooltipComponent } from './shared/tooltip/tooltip.component';
   imports: [
     RouterModule,
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CKEditorModule,
     FormsModule,

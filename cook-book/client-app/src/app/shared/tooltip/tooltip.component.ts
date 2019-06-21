@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import {
+  animate,
+  transition,
+  state,
+  style,
+} from '@angular/animations';
 
 @Component({
   selector: 'app-tooltip',
@@ -11,9 +17,7 @@ import { Component } from '@angular/core';
       {{message}}
     </div>
   </ng-template>
-  </div>
-`,
-  styleUrls: ['./tooltip.component.scss']
+  </div>`,
 })
 export class TooltipComponent {
 
