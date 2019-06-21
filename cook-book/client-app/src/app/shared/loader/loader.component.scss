@@ -1,4 +1,8 @@
+@import "../../../global/styles/variables.scss";
+
 .loader-component {
+  @include font-alternative;
+
   z-index: 999;
   position: absolute;
   top: 0;
