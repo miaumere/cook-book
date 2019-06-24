@@ -47,7 +47,7 @@ export class NewRecipeComponent implements OnInit {
           console.log(data)
           this.recipes = data;
         }
-      ))
+      ));
 
   }
 

@@ -1,15 +1,20 @@
 import {
   Input, Renderer2, HostListener, Directive, ElementRef,
-  TemplateRef, ViewContainerRef, ContentChild, ComponentRef
+  TemplateRef, ViewContainerRef, ContentChild
 } from '@angular/core';
 
-@Directive({ selector: '[appTooltip]' })
+@Directive({
+  selector: '[appTooltip]',
+  exportAs: 'tooltip'
+})
 export class TooltipDirective {
 
   constructor(
     private renderer: Renderer2,
     private elementRef: ElementRef,
     private viewContainerRef: ViewContainerRef) { }
+
+  isOpen = false;
 
   @Input() parametroPlantilla: TemplateRef<any>;
 
@@ -19,11 +24,12 @@ export class TooltipDirective {
     const view = this.viewContainerRef.createEmbeddedView(this.tooltipTemplateRef);
     view.rootNodes.forEach(node =>
       this.renderer.appendChild(this.elementRef.nativeElement, node));
+    this.isOpen = true;
   }
 
   @HostListener('mouseleave') onMouseLeave(): void {
     if (this.viewContainerRef) {
-      this.viewContainerRef.clear();
+      this.isOpen = false;
     }
   }
 }

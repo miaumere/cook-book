@@ -61,8 +61,6 @@ $tooltip-align: -6.5rem;
   margin-top: $tooltip-align;
   margin-left: $tooltip-align;
 
-  background-image: linear-gradient(to bottom, grey 0%, white 100%);
-
   &__arrow {
     position: absolute;
     top: 105%;
@@ -71,4 +69,11 @@ $tooltip-align: -6.5rem;
     border-style: solid;
     border-color: $tooltip-border-color transparent transparent transparent;
   }
+}
+
+.open {
+  opacity: 1;
+}
+.closed {
+  opacity: 0;
 }
